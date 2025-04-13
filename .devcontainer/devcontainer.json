@@ -1,21 +1,31 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "SCP management website DevCon",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+	// Dev container name
+	"name": "SCP MW dev enviroment",
+	// Build Dockerfile for dev container
+	"build": {
+		"dockerfile": "Dockerfile",
+		"options": ["--tag=scp_mw_dev_enviroment:0.0"]
+	},
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	// Ports inside the container available locally.
+	"forwardPorts": [3000],
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	// Commands after the container is created i.e install node dependencies
+	"postCreateCommand": "npm install --legacy-peer-deps",
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install"
-
-	// Configure tool-specific properties.
-	// "customizations": {},
+	// Custom properties for specific product i.e VS Code extensions
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"eamodio.gitlens",
+				"EQuimper.react-native-react-redux",
+				"ms-vscode.vscode-typescript-next",
+				"ecmel.vscode-html-css",
+				"burkeholland.simple-react-snippets",
+				"bradlc.vscode-tailwindcss"
+			]
+		}
+	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"

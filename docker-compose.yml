@@ -1,0 +1,12 @@
+version:  "3.8"
+
+services:
+  frontend:
+    image: scp_compose_deploy:0.0
+    container_name: scp_compose_deploy
+    restart: always
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: Dockerfile
