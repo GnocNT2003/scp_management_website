@@ -6,7 +6,11 @@ RUN apk add --no-cache libc6-compat
 # Install git on dev enviroment
 RUN apk add --no-cache git
 
+# Install bash for running cmd in CI actions
+RUN apk add --no-cache bash
+
 # Dev Enviroment:
     # Alpine linux distro: ✅
     # Node: ✅
     # Git: ✅
+    # Bash: ✅
