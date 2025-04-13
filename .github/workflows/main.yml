@@ -42,8 +42,8 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/scp_web_management_prod
-        cache-to: type=local,src=./tmp/.buildx-cache
-        cache-from: type=local,dest=./tmp/.buildx-cache
+        cache-to: type=local,dest=./tmp/.buildx-cache
+        cache-from: type=local,src=./tmp/.buildx-cache
 
     - name: Verify CI/CD pipeline
       run: echo ${{ steps.docker_build.outputs.digest }}
