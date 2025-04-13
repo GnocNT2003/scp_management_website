@@ -41,7 +41,7 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: ${{ secret.DOCKER_HUB_USERNAME }}/scp_web_management_prod
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/scp_web_management_prod
         cache-to: type=local,src=./tmp/.buildx-cache
         cache-from: type=local,dest=./tmp/.buildx-cache
 
