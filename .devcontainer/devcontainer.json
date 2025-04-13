@@ -1,11 +1,12 @@
 {
 	// Dev container name
 	"name": "SCP MW dev enviroment",
-	// Build Dockerfile for dev container
-	"build": {
-		"dockerfile": "Dockerfile",
-		"options": ["--tag=scp_mw_dev_enviroment:0.0"]
-	},
+	// Build Dockerfile for dev container, uncomment when add new tools to dev container
+	// "build": {
+	// 	"dockerfile": "Dockerfile",
+	// 	"options": ["--tag=scp_mw_dev_enviroment:0.0"]
+	// },
+	"image": "ntdat2003/scp_web_management_dev",
 
 	// Ports inside the container available locally.
 	"forwardPorts": [3000],
