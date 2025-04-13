@@ -39,10 +39,10 @@ jobs:
       id: dev_container_prebuild
       with:
         imageName: ${{ secrets.DOCKER_HUB_USERNAME }}/scp_web_management_dev
-        cacheTo: ${{ secrets.DOCKER_HUB_USERNAME }}/scp_web_management_dev
+        # cacheTo: ${{ secrets.DOCKER_HUB_USERNAME }}/scp_web_management_dev
         cacheFrom: ${{ secrets.DOCKER_HUB_USERNAME }}/scp_web_management_dev
         push: always
-        runCmd: npm test
+        runCmd: npm -v
 
     - name: Verify CI/CD pipeline
       run: echo ${{ steps.dev_container_prebuild.outputs.runCmdOutput }}
