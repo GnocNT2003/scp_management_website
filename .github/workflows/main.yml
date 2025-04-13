@@ -46,4 +46,4 @@ jobs:
         cache-from: type=local,dest=./tmp/.buildx-cache
 
     - name: Verify CI/CD pipeline
-      run: echo ${{ step.docker_build.outputs.digest }}
+      run: echo ${{ steps.docker_build.outputs.digest }}
